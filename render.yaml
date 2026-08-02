@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: widman-key-bot
+    env: node
+    plan: free
+    nodeVersion: 22
+    buildCommand: npm install
+    startCommand: node --experimental-sqlite src/index.js
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: NODE_ENV
+        value: production
